@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"strconv"
 	"test/internal/models"
-	"test/internal/render"
 	"time"
 
 	"net/http"
@@ -26,6 +25,12 @@ func (h *Handler) paymentAccruals(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	sum, err := strconv.Atoi(r.URL.Query().Get("Sum"))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
 	idAccruals, err := strconv.Atoi(r.URL.Query().Get("idAccruals"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -33,7 +38,7 @@ func (h *Handler) paymentAccruals(w http.ResponseWriter, r *http.Request) {
 	}
 	payment := &models.PaymentsDTO{
 		Date:   time.Now(),
-		Sum:    12,
+		Sum:    sum,
 		UserId: userId,
 	}
 	err = h.service.AccountsService.CreatePayment(payment, idAccruals)
@@ -41,9 +46,6 @@ func (h *Handler) paymentAccruals(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	h.templates.Render(w, r, "home.page.html", &render.PageData{
-		Topic: "Home",
-	})
 
 	http.Redirect(w, r, fmt.Sprintf("/usermenu?id=%d", userId), http.StatusSeeOther)
 
