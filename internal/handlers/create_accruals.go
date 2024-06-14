@@ -79,5 +79,5 @@ func (h *Handler) createAccruals(w http.ResponseWriter, r *http.Request) {
 	// }
 
 	http.Redirect(w, r, fmt.Sprintf("/usermenu?id=%d", userId), http.StatusSeeOther)
-	fmt.Println("10")
+
 }

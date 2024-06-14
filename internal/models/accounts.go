@@ -18,12 +18,16 @@ type AccrualsDTO struct {
 	Status    bool
 	Substract int
 	Sum       int
+	Addr      string
+	Name      string
 }
 type PaymentsDTO struct {
 	Id     int
 	Date   time.Time
 	Sum    int
 	UserId int
+	Addr   string
+	Name   string
 }
 
 type Payments struct {
@@ -31,6 +35,7 @@ type Payments struct {
 	Date   string
 	Sum    int
 	UserId int
+	Addr   string
 }
 
 type AccountRepo interface {

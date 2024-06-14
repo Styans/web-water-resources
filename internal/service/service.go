@@ -5,6 +5,7 @@ import (
 	"test/internal/models"
 	"test/internal/repository"
 	"test/internal/service/accounts"
+	"test/internal/service/receipts"
 	"test/internal/service/tariffs"
 	"test/internal/service/users"
 )
@@ -13,6 +14,7 @@ type Service struct {
 	UserService     models.UserService
 	AccountsService models.AccountsService
 	TariffsService  models.TariffsService
+	ReceptsService  models.ReceptsService
 }
 
 func NewService(repo *repository.Repository, log *log.Logger) *Service {
@@ -20,5 +22,6 @@ func NewService(repo *repository.Repository, log *log.Logger) *Service {
 		UserService:     users.NewUserService(repo.UserRepo),
 		AccountsService: accounts.NewAccountsService(repo.AccountsRepo),
 		TariffsService:  tariffs.NewTariffsService(repo.TariffsRepo),
+		ReceptsService:  receipts.NewReceptsService(),
 	}
 }

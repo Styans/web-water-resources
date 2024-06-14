@@ -19,7 +19,11 @@
             <th>{{.Date}}</th>
             <th>{{.Sum}}</th>
             <td class="hover-effect another-color">
-              <form action="#">
+              <form action="/generateRes">
+                <input value="{{.UserId}}" name="UserId" class="hiddenMe" />
+
+                <input value="{{.Sum}}" name="Sum" class="hiddenMe" />
+                <input value="{{.Date}}" name="Date" class="hiddenMe" />
                 <button type="submit" class="buttonincont">кваитанция</button>
               </form>
             </td>
@@ -55,7 +59,19 @@
             <td>{{.Substract}}</td>
             <td>{{.Sum}}</td>
             <td class="hover-effect another-color">
-              <form action="#">
+              <form action="/generateRecrpts">
+                <input value="{{.Past}}" name="Past" class="hiddenMe" />
+                <input value="{{.Last}}" name="Last" class="hiddenMe" />
+                <input
+                  value="{{.Substract}}"
+                  name="Substract"
+                  class="hiddenMe"
+                />
+                <input value="{{.Name}}" name="Name" class="hiddenMe" />
+
+                <input value="{{.Sum}}" name="Sum" class="hiddenMe" />
+                <input value="{{.UserId}}" name="UserId" class="hiddenMe" />
+
                 <button type="submit" class="buttonincont">счет-изв.</button>
               </form>
             </td>
