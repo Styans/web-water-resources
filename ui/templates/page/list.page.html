@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Topic}}</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      {{template "header" .}}
+      <!-- ====================================================== -->
+      <div class="main">
+        <div class="container">
+          <table>
+            <thead>
+              <tr>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Льгота</th>
+                <th>Состояние</th>
+                <th>Район</th>
+                <th>Адрес</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{range .Users}}
+              <tr data-href="/usermenu?id={{.Id}}">
+                <td>{{.Name}}</td>
+                <td>{{.Secondname}}</td>
+                <td>{{.Patronymic}}</td>
+                <td>{{.Benefits}}</td>
+                <td>
+                  {{if eq .Status false }}не оплатил{{else}}оплатил{{end}}
+                </td>
+                <td>{{.Districts}}</td>
+                <td>{{.Addr}}</td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ====================================================== -->
+      {{template "footer" .}}
+    </div>
+    <script>
+      $(document).ready(function ($) {
+        $("*[data-href]").on("click", function () {
+          window.location = $(this).data("href");
+        });
+      });
+    </script>
+  </body>
+</html>

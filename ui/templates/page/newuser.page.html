@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Topic}}</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      {{template "header" .}}
+      <!-- ====================================================== -->
+      <div class="main">
+        <div class="container">
+          <form action="/add_user" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="secondname">Фамилия:</label>
+            <input type="text" id="secondname" name="secondname" required />
+
+            <label for="patronymic">Отчество:</label>
+            <input type="text" id="patronymic" name="patronymic" required />
+
+            <label for="benefits">Льгота:</label>
+            <select id="benefits" name="benefits" required>
+              <option value="ветеран ВОВ">ветеран ВОВ</option>
+              <option value="пенсионер">пенсионер</option>
+              <option value="инвалид">инвалид</option>
+              <option value="обычный">обычный</option>
+            </select>
+
+            <label for="districts">Район:</label>
+            <select id="districts" name="districts" required>
+              <option value="Абайский">Абайский</option>
+              <option value="Енбекшинский">Енбекшинский</option>
+              <option value="Аль-Фарабийский">Аль-Фарабийский</option>
+              <option value="Каратауский">Каратауский</option>
+            </select>
+
+            <label for="addr">Улица:</label>
+            <textarea id="addr" name="addr" rows="1" required></textarea>
+
+            <button type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <!-- ====================================================== -->
+      {{template "footer" .}}
+    </div>
+  </body>
+</html>
