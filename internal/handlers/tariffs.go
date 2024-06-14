@@ -10,7 +10,9 @@ func (h *Handler) tariffs(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Not found", http.StatusNotFound)
 		return
 	}
+
 	h.templates.Render(w, r, "tariffs.page.html", &render.PageData{
-		Topic: "Тарифы",
+		Topic:   "Тарифы",
+		// Tariffs: *t,
 	})
 }

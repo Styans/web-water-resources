@@ -16,6 +16,8 @@ func (h *Handler) Routes() http.Handler {
 	mux.HandleFunc("/list", h.list)
 	mux.HandleFunc("/add_user", h.newUser)
 	mux.HandleFunc("/usermenu", h.usermenu)
+	mux.HandleFunc("/createaccual", h.createAccruals)
+	mux.HandleFunc("/paymentAccruals", h.paymentAccruals)
 	return mux
 }
 

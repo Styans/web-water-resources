@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 	"test/internal/models"
 	"test/internal/render"
@@ -12,7 +11,7 @@ func (h *Handler) newUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Not found", http.StatusNotFound)
 		return
 	}
-	// fmt.Println(r.Method)
+
 	if r.Method == http.MethodGet {
 		h.templates.Render(w, r, "newuser.page.html", &render.PageData{
 			Topic: "Льготы",
@@ -32,7 +31,7 @@ func (h *Handler) newUser(w http.ResponseWriter, r *http.Request) {
 			Districts: r.FormValue("districts"),
 			Addr:      r.FormValue("addr"),
 		}
-		fmt.Println(user)
+
 		err = h.service.UserService.CreateUser(user)
 
 		if err != nil {

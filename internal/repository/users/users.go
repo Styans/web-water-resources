@@ -60,3 +60,22 @@ func (s *UserStorage) GetAllUsers() ([]*models.User, error) {
 
 	return users, nil
 }
+
+func (s *UserStorage) GetUserByID(id int) (*models.User, error) {
+	var user models.User
+	err := s.db.QueryRow("SELECT * FROM users WHERE id = $1", id).Scan(
+		&user.Id,
+		&user.Name,
+		&user.Secondname,
+		&user.Patronymic,
+		&user.Benefits,
+		&user.Status,
+		&user.Districts,
+		&user.Addr,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return &user, nil
+}

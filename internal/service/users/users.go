@@ -19,3 +19,7 @@ func (s *UserService) CreateUser(user *models.User) error {
 func (s *UserService) GetAllUsers() ([]*models.User, error) {
 	return s.repo.GetAllUsers()
 }
+
+func (s *UserService) GetUserByID(id int) (*models.User, error) {
+	return s.repo.GetUserByID(id)
+}

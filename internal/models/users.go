@@ -14,9 +14,11 @@ type User struct {
 type UserService interface {
 	CreateUser(*User) error
 	GetAllUsers() ([]*User, error)
+	GetUserByID(id int) (*User, error)
 }
 
 type UserRepo interface {
 	CreateUser(*User) error
 	GetAllUsers() ([]*User, error)
+	GetUserByID(id int) (*User, error)
 }

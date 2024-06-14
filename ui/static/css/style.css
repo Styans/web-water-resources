@@ -47,7 +47,7 @@
 
 .dropbtn:hover  {background-color: #3e8e41;}
 
-form {
+.formuser {
   max-width: 600px;
   margin: auto;
   padding: 10px;
@@ -58,19 +58,20 @@ label {
   display: block;
   margin-top: 10px;
 }
-input, textarea, select, button {
+.inppts {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-button {
+.bs {
   background-color: #4CAF50;
   color: white;
+  border:0;
   cursor: pointer;
 }
-button:hover {
+.bs:hover {
   background-color: #45a049;
 }
 
@@ -89,7 +90,103 @@ td {
 th {
   background-color: #f2f2f2;
 }
-tr:hover {
+.hover-effect:hover {
   background-color: #f1f1f1;
   cursor: pointer;
+}
+
+
+.top-main, .add-accruals-menu {
+  display: flex;
+}
+.top-main {
+  padding: 25px;
+  background-color: #D9D9D9;
+  width: 100%;
+  justify-content:space-between;
+}
+.alldatas {
+  height: calc(100vh - 50px);
+  padding: 10px;
+  background-color: #CCCCCC;
+}
+.input_num {
+width: 100%;
+}
+.form_num {
+  display: block;
+}
+.add-accruals-menu {
+  display: flex;
+  justify-content: space-between;
+  background-color: #C8C8C8;
+  width: 450px;
+  padding: 15px;
+}
+
+.tariff {
+  padding: 20px 0;
+}
+
+.num_bs {
+  width: 100px;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.user-info {
+  padding: 10px;
+}
+
+.user-names {
+  font-size: 25px;
+  padding: 10px 0;
+}
+
+header {
+  background-color: #949494;
+}
+
+
+.bottom-main {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-around;
+}
+
+.blocks_carkas {
+  min-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #000000;
+}
+
+ html, body {
+  height: 100vh;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.main  {
+  height: calc(100vh - 50px);
+}
+
+
+.hiddenMe {
+  display: none;
+}
+
+
+.buttonincont {
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+
+  display: contents;
+}
+
+.another-color {
+  background-color: #7f7f7f;
 }

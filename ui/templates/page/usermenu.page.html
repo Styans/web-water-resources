@@ -19,7 +19,50 @@
       <!-- ====================================================== -->
       <div class="main">
         <div class="container">
-            
+          <div class="alldatas">
+            <div class="top-main">
+              <div class="user-info">
+                <p class="user-names">{{.User.Name}}</p>
+                <p class="user-names">{{.User.Secondname}}</p>
+                <p class="user-names">{{.User.Patronymic}}</p>
+              </div>
+              <div class="add-accruals-menu">
+                <div class="l-accr-menu">
+                  <form action="/createaccual" class="form_num" method="post">
+                    <label class="input_num">
+                      Пред.
+                      <input
+                        type="number"
+                        id="past"
+                        name="past"
+                        class="input_num"
+                      />
+                    </label>
+                    <label  for="last" class='input_num'>
+                      Посл.
+                      <input
+                        type="number"
+                        id="last"
+                        name="last"
+                        class="input_num"
+                      />
+                    </label for="past">
+                    <label for="UserId" class="hiddenMe">
+                      <input type="text" value="{{.User.Id}}" name="UserId">
+                   </label>
+                    <button type="submit" class="bs num_bs">Отправить</button>
+                  </form>
+                </div>
+                <div class="r-accr-menu">
+                  <p class="tariff">Тариф: 28.22 тг.</p>
+                  <p class="benefits">
+                    Льгота: {{.User.Benefits}} {{.TariffsSum}}%
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{template "bottom-main" .}}
+          </div>
         </div>
       </div>
       <!-- ====================================================== -->

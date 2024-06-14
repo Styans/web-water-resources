@@ -19,18 +19,32 @@
       <!-- ====================================================== -->
       <div class="main">
         <div class="container">
-          <form action="/add_user" method="post">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required />
+          <form action="/add_user" method="post" class="formuser">
+            <label for="name" class="inppts">Имя:</label>
+            <input type="text" id="name" name="name" required class="inppts" />
 
-            <label for="secondname">Фамилия:</label>
-            <input type="text" id="secondname" name="secondname" required />
-
-            <label for="patronymic">Отчество:</label>
-            <input type="text" id="patronymic" name="patronymic" required />
+            <label for="secondname"
+              >Фамилия:
+              <input
+                type="text"
+                id="secondname"
+                name="secondname"
+                required
+                class="inppts"
+              />
+            </label>
+            <label for="patronymic"
+              >Отчество:
+              <input
+                type="text"
+                id="patronymic"
+                name="patronymic"
+                required
+                class="inppts"
+            /></label>
 
             <label for="benefits">Льгота:</label>
-            <select id="benefits" name="benefits" required>
+            <select id="benefits" name="benefits" required class="inppts">
               <option value="ветеран ВОВ">ветеран ВОВ</option>
               <option value="пенсионер">пенсионер</option>
               <option value="инвалид">инвалид</option>
@@ -38,17 +52,25 @@
             </select>
 
             <label for="districts">Район:</label>
-            <select id="districts" name="districts" required>
-              <option value="Абайский">Абайский</option>
-              <option value="Енбекшинский">Енбекшинский</option>
-              <option value="Аль-Фарабийский">Аль-Фарабийский</option>
-              <option value="Каратауский">Каратауский</option>
+            <select id="districts" name="districts" required class="inppts">
+              <option value="Абайский" class="inppts">Абайский</option>
+              <option value="Енбекшинский" class="inppts">Енбекшинский</option>
+              <option value="Аль-Фарабийский" class="inppts">
+                Аль-Фарабийский
+              </option>
+              <option value="Каратауский" class="inppts">Каратауский</option>
             </select>
 
             <label for="addr">Улица:</label>
-            <textarea id="addr" name="addr" rows="1" required></textarea>
+            <textarea
+              id="addr"
+              name="addr"
+              rows="1"
+              required
+              class="inppts"
+            ></textarea>
 
-            <button type="submit">Отправить</button>
+            <button type="submit" class="inppts bs">Отправить</button>
           </form>
         </div>
       </div>

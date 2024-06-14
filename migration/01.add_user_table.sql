@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
     secondname  TEXT NOT NULL,
     patronymic  TEXT NOT NULL,
     benefits    TEXT NOT NULL,
-    status      BOOL NOT NULL,
+    status      BOOLEAN NOT NULL,
     districts   TEXT NOT NULL,
     addr        TEXT NOT NULL
 );
